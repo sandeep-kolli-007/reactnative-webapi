@@ -1,0 +1,3 @@
+obj/Debug/net6.0/Protos/Loads.cs \
+obj/Debug/net6.0/Protos/LoadsGrpc.cs: Protos/images.proto\
+ Protos/loads.proto

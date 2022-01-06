@@ -1,0 +1,51 @@
+syntax = "proto3";
+package loads;
+import "images.proto";
+
+option csharp_namespace = "GrpcService";
+
+// package greet;
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.loads";
+option java_outer_classname = "loadsproto";
+option objc_class_prefix = "LDS";
+
+// The greeting service definition.
+service Loads {
+  // Sends a greeting
+  rpc GetLoads (LoadsRequest) returns (LoadsResponse);
+}
+
+// The request message containing the user's name.
+message LoadsRequest {
+  string shipmentNumber = 1;
+}
+
+
+message Load {
+  string loadNumber = 1;
+  string shipmentNumber = 2;
+  string pieceId = 3;
+  string pieceState = 4;
+  double productNumber = 5;
+  string vendor = 6;
+  double master = 7;
+  double quantity = 8;
+  double noOfPiecesOver = 9;
+  string overagePieceType = 10;
+  string pieceTypeImage = 11;
+  string shipmentLabelImage = 12;
+  string productLabelImage = 13;
+  string ltlProImage = 14;
+  string damageImages = 15;
+  string damageLevel = 16;
+  string damageType = 17;
+  string notes = 18;
+  string type = 19;
+  repeated ImageResponse images=20;
+  }
+  
+  // The response message containing the greetings.
+  message LoadsResponse {
+    repeated Load loads = 1;
+    }

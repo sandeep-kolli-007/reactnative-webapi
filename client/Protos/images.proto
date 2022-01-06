@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcService";
+
+
+// The response message containing image_details
+message ImageResponse {
+    string Imageurl = 1;
+    double Length = 2;
+    double Width = 3;
+    double Height = 4;
+    string ConfirmPieceType = 5;
+    double StackQuantity = 6;
+    double Selected = 7;
+  }
