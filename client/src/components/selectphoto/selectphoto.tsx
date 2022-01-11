@@ -1,16 +1,20 @@
 import React, {useEffect, useState} from 'react';
 import {View, Text, NativeModules, Image, Alert, Pressable} from 'react-native';
 import {TextInput, TouchableHighlight, TouchableOpacity} from 'react-native-gesture-handler';
-import  Icon  from 'react-native-vector-icons/FontAwesome5';
+import Icon from 'react-native-vector-icons/FontAwesome5';
 import CommonLayout from '../shared/commonlayout';
 import CustomButton from '../shared/custombutton';
 import TextBox from '../shared/input';
-import { useNavigation } from '@react-navigation/core';
+import {useNavigation} from '@react-navigation/core';
 
 const SelectPhoto = () => {
-    // const navigation :any= useNavigation();
-    const [retrivedimages, setretrivedimages] = useState<Array<any>>([]);
-    const {GreetModule, LoadsModule} = NativeModules;
+  const navigation: any = useNavigation();
+  const [retrivedimages, setretrivedimages] = useState<Array<any>>([
+    {imageurl: 'https://www.ajot.com/images/uploads/article/690-cardboard-pallets.jpg'},
+    {imageurl: 'https://www.ajot.com/images/uploads/article/690-cardboard-pallets.jpg'},
+    {imageurl: 'https://www.ajot.com/images/uploads/article/690-cardboard-pallets.jpg'},
+  ]);
+  const {GreetModule, LoadsModule} = NativeModules;
 
   // const grpc = async () => {
   //   await LoadsModule.Message('s', (res: any) => {
@@ -23,10 +27,10 @@ const SelectPhoto = () => {
   return (
     <CommonLayout isnavigation navigationtext="Confirm">
       <View style={{flex: 1, alignItems: 'center', marginTop: 16}}>
-        <CustomButton text={'Shippers L&C'} />
+        <CustomButton text={'Shippers L&C'} style={{marginBottom: 16}} />
         {retrivedimages.map((res: any, index: number) => {
           return (
-            <View  key={index} style={{flex:1,marginBottom:32}}>
+            <View key={index} style={{flex: 1, marginBottom: 32}}>
               <Pressable
                 onPress={() => {
                   retrivedimages.map(res => (res.Selected = 0));
@@ -54,7 +58,7 @@ const SelectPhoto = () => {
             </View>
           );
         })}
-         <Pressable  onPress={()=>navigation.navigate('information')}>
+        <Pressable onPress={() => navigation.navigate('information')}>
           <View
             style={{
               height: 270,
@@ -66,15 +70,11 @@ const SelectPhoto = () => {
               alignItems: 'center',
             }}>
             <Icon name="camera" size={32} color="#0F1924"></Icon>
-            <Text style={{marginTop: 8, color: '#0F1924'}}>
-              OTHER PHOTO
-            </Text>
+            <Text style={{marginTop: 8, color: '#0F1924'}}>OTHER PHOTO</Text>
           </View>
         </Pressable>
       </View>
-      
     </CommonLayout>
-     
   );
 };
 

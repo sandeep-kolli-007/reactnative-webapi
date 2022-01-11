@@ -19,7 +19,7 @@ const SplitOrder = () => {
 
   return (
     <CommonLayout>
-      <View style={{marginHorizontal: 16}}>
+      <View>
         <TextBox label="Trailer / Shipment / HU" />
         <View style={{alignItems: 'center', marginTop: 16}}>
           <CustomButton text="SEARCH" icon={'search'} />

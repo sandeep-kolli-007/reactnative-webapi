@@ -17,7 +17,7 @@ const ProductScanning = () => {
       isnavigation
       navigation="photoselect"
       navigationtext="Process">
-      <View style={{marginHorizontal: 16}}>
+      <View>
         <TextBox
           label="Product Number"
           value={productdetails?.ProductNumber}

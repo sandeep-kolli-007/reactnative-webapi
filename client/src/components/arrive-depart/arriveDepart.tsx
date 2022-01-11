@@ -15,7 +15,7 @@ const ArriveDepart = () => {
           <CustomButton text="Depart Trailer" />
         </>
       }>
-      <View style={{marginHorizontal: 16}}>
+      <View>
         <TextBox label="Load" />
         <Text style={{textAlign: 'center', color: 'white', marginTop: 16}}>
           ----- OR -----
@@ -36,7 +36,7 @@ const ArriveDepart = () => {
         </View>
       </View>
       {isShow && (
-        <View style={{margin: 16}}>
+        <View  style={{marginTop:16}}>
           <Text style={{color: 'white', textDecorationLine: 'underline'}}>
             Previous Stop:
           </Text>

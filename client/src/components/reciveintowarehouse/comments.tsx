@@ -7,7 +7,7 @@ import TextBox from '../shared/input';
 const Comments = () => {
   return (
     <CommonLayout hidefooter>
-      <View style={{marginHorizontal: 16}}>
+      <View>
         <View>
           <Text style={styles.textBold}>Prevoius Comments</Text>
           <Text style={styles.text}>No Prevoius Comments</Text>

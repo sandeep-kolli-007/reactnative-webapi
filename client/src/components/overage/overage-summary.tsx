@@ -10,7 +10,7 @@ const OverageSummary = () => {
   const navigation :any= useNavigation();
   return (
     <CommonLayout>
-      <View style={{margin: 16}}>
+      <View >
         <Dropdown label="Piece Type" data={['Pallet', 'Pallet']} />
         <View>
           <View style={{marginVertical: 16, alignItems: 'center'}}>

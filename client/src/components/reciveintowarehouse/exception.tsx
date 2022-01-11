@@ -5,7 +5,7 @@ import CommonLayout from '../shared/commonlayout';
 const Exception = () => {
   return (
     <CommonLayout>
-      <View style={{marginHorizontal: 16}}>
+      <View>
         <View style={{flexDirection: 'row', marginTop: 16}}>
           <Text style={styles.exceptionColumns}>Shipment</Text>
           <Text style={styles.exceptionColumns}>Parts</Text>

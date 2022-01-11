@@ -13,7 +13,7 @@ const HandlingUnit = () => {
           <CustomButton text="Confirm" />
         </>
       }>
-      <View style={{marginHorizontal: 16}}>
+      <View>
         <TextBox label="Default Location" />
         <View style={{marginTop: 16, flexDirection: 'row', justifyContent: 'space-around'}}>
           <View>

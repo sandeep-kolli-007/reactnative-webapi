@@ -6,7 +6,7 @@ const Parts = () => {
   const [selectedvalue, setselectedvalue] = useState(0);
   return (
     <CommonLayout>
-      <View style={{marginHorizontal: 16}}>
+      <View>
         <Text style={{textAlign: 'center', color: 'white', marginVertical: 8, fontSize: 18, fontWeight: '700'}}>Pallet Summary</Text>
         <Text style={{textAlign: 'center', color: 'white', marginVertical: 8}}>Handling Unit</Text>
         <SegmentedControl values={['All', 'Incomplete']} selectedIndex={selectedvalue} onChange={(event: any) => setselectedvalue(event.nativeEvent.selectedSegmentIndex)} />

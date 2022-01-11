@@ -12,7 +12,7 @@ const OSD = () => {
   const {updateshortagepieces} = Services();
 
   const shortage = () => {
-    const stack:any = 'summary';
+    const stack: any = 'summary';
     updateshortagepieces(loadid);
     navigation.navigate(stack);
   };
@@ -25,27 +25,9 @@ const OSD = () => {
           height: 200,
           justifyContent: 'space-between',
         }}>
-        <CustomButton
-          color="#FF8800"
-          stack="damage"
-          text="Damage"
-          textColor="white"
-          width={240}
-          fontSize={20}></CustomButton>
-        <CustomButton
-          color="#990000"
-          text="Shortage"
-          textColor="white"
-          width={240}
-          fontSize={20}
-          onPress={shortage}></CustomButton>
-        <CustomButton
-          color="#6C0099"
-          stack="overage"
-          text="Overage"
-          textColor="white"
-          width={240}
-          fontSize={20}></CustomButton>
+        <CustomButton color="#FF8800" stack="damage" text="Damage" textColor="white" width={240}></CustomButton>
+        <CustomButton color="#990000" text="Shortage" textColor="white" width={240} onPress={shortage}></CustomButton>
+        <CustomButton color="#6C0099" stack="overage" text="Overage" textColor="white" width={240}></CustomButton>
       </View>
     </CommonLayout>
   );

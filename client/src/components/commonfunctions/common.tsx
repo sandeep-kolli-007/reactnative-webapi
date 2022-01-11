@@ -1,12 +1,12 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 import {Services} from '../../services/services';
-import NetInfo, {useNetInfo} from '@react-native-community/netinfo';
+// import NetInfo, {useNetInfo} from '@react-native-community/netinfo';
 
 export const Common = () => {
   const {getunsyncedloads, updatesync, updateloadssync, getunsyncedimages,updatepartialstate} =
     Services();
-  const netInfo = useNetInfo();
+  // const netInfo = useNetInfo();
 
   //types
   interface newimage {
@@ -24,7 +24,7 @@ export const Common = () => {
     let unsyncedloads: Array<any> = [];
     let unsyncedimages: Array<any> = [];
 
-    if (netInfo?.isConnected) {
+    // if (netInfo?.isConnected) {
       getunsyncedloads().then((data: any) => {
         if (data.rows.length > 0) {
           for (var i = 0; i < data.rows.length; i++) {
@@ -94,7 +94,7 @@ export const Common = () => {
         }
       });
     }
-  };
+  // };
 
   return {
     sync,

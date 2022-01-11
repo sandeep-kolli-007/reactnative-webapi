@@ -7,7 +7,7 @@ import TextBox from '../shared/input';
 const Shipment = () => {
   return (
     <CommonLayout>
-      <View style={{marginHorizontal: 16}}>
+      <View>
         <View style={{flexDirection: 'row', justifyContent: 'space-between', marginTop: 16}}>
           <Text style={{color: 'white', fontWeight: '700', fontSize: 16}}>PUL : </Text>
           <Text style={{color: 'white', fontWeight: '700', fontSize: 16}}>Trip Id : </Text>

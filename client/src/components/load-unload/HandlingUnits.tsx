@@ -7,7 +7,7 @@ import TextBox from '../shared/input';
 const HandlingUnits = () => {
   return (
     <CommonLayout hidefooter>
-      <View style={{marginHorizontal: 16}}>
+      <View>
         <TextBox label="Handling Unit" />
         <TextBox label="Trailer" />
         <View style={{alignItems: 'center'}}>

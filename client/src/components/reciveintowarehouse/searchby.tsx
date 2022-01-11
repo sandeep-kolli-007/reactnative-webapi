@@ -15,7 +15,7 @@ const SearchBy = () => {
   return (
     <CommonLayout hidefooter>
       {/* <Text>{route.params.searchby}</Text> */}
-      <View style={{marginHorizontal: 16}}>
+      <View>
         {values.includes(name) ? (
           <TextBox label={name} inputgroup />
         ) : (

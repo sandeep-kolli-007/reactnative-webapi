@@ -13,7 +13,7 @@ const DockCount = () => {
       }
     return (
         <CommonLayout isButtons={<><CustomButton text='CLEAR'/><CustomButton text='SAVE' color='#80B0E6' textColor='white'/></>}>
-            <View style={{marginHorizontal:16}}>
+            <View>
                 <TextBox label="Directed"/>
                 <TextBox label="Location"/>
                 <TextBox label="Container Id"/>

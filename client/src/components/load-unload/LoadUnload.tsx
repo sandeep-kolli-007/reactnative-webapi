@@ -40,7 +40,7 @@ const LoadUnload = () => {
         }}
       />
       <Tab.Screen
-        name={"Handling Unit"+"s"}
+        name={"Handling Units"}
         component={HandlingUnits}
         options={{
           ...options,

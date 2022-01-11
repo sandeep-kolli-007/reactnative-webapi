@@ -27,7 +27,7 @@ const ShipmentExceptions = () => {
   ];
   return (
     <CommonLayout hidefooter>
-      <View style={{marginHorizontal: 16}}>
+      <View>
         <View style={{alignItems: 'center'}}>
           <Text
             style={{

@@ -7,7 +7,7 @@ import TextBox from '../shared/input';
 const LoadingTools = () => {
   return (
     <CommonLayout hidefooter>
-      <View style={{marginHorizontal: 16}}>
+      <View>
         <Text
           style={{
             color: 'white',

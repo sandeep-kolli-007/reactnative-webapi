@@ -9,15 +9,8 @@ const Tab = createMaterialBottomTabNavigator();
 
 const Exception = () => {
   return (
-    <Tab.Navigator
-      barStyle={{backgroundColor: 'white'}}
-      activeColor="#0F1924"
-      inactiveColor="grey">
-      <Tab.Screen
-        name={"Exception"+"s"}
-        component={ExceptionTab}
-        options={{tabBarIcon: d => <Icon name="ban" color={d.color}  size={16}/>}}
-      />
+    <Tab.Navigator barStyle={{backgroundColor: 'white'}} activeColor="#0F1924" inactiveColor="grey">
+      <Tab.Screen name={'Exceptionstab'} component={ExceptionTab} options={{title: 'Exceptions', tabBarIcon: d => <Icon name="ban" color={d.color} size={16} />}} />
       <Tab.Screen
         name="Shipment Exceptions"
         component={ShipmentExceptions}
@@ -25,11 +18,7 @@ const Exception = () => {
           tabBarIcon: d => <Icon name="truck-loading" color={d.color} size={16} />,
         }}
       />
-      <Tab.Screen
-        name="Loading Tools"
-        component={LoadingTools}
-        options={{tabBarIcon: d => <Icon name="tools" color={d.color} size={16} />}}
-      />
+      <Tab.Screen name="Loading Tools" component={LoadingTools} options={{tabBarIcon: d => <Icon name="tools" color={d.color} size={16} />}} />
     </Tab.Navigator>
   );
 };

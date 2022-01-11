@@ -12,7 +12,7 @@ import OSD from '../osd/osd';
 import RNPrintExample from '../print/print';
 import {Services} from '../../services/services';
 import {useTreble} from 'treble-gsm';
-import NetInfo, {useNetInfo} from '@react-native-community/netinfo';
+// import NetInfo, {useNetInfo} from '@react-native-community/netinfo';
 import {Common} from '../commonfunctions/common';
 import Toast from 'react-native-simple-toast';
 import Information from '../information/information';
@@ -47,12 +47,12 @@ const options: any = {
   headerTitleAlign: 'center',
   headerShown: true,
 };
-
+  
 const Stacks = () => {
   const [{shipment, piece}, Store] = useTreble();
   const {sync} = Common();
   const {createtable, insertloads, insertimages, getunsyncedloads, loadscount} = Services();
-  const netInfo = useNetInfo();
+  // const netInfo = useNetInfo();
   const [data, setdata] = useState('default');
   const {GreetModule, LoadsModule, GreetService} = NativeModules;
 
@@ -75,7 +75,7 @@ const Stacks = () => {
     // grpc();
     //*create table
     // createtable();
-    console.log(netInfo.isConnected + 'logging network');
+    // console.log(netInfo.isConnected + 'logging network');
     // if (netInfo.isConnected) {
     //   //TODO Need to add, images count function to get no of images
     //   loadscount().then((res: any) => {

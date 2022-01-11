@@ -1,13 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  Alert,
-  TouchableHighlight,
-  Image,
-} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity, Alert, TouchableHighlight, Image} from 'react-native';
 import CommonLayout from '../shared/commonlayout';
 import {RNCamera} from 'react-native-camera';
 import Icon from 'react-native-vector-icons/FontAwesome5';
@@ -31,8 +23,8 @@ interface newimage {
 }
 
 const Information = () => {
-  const navigation = useNavigation();
-  const route = useRoute();
+  const navigation: any = useNavigation();
+  const route: any = useRoute();
   const [{loadid}, Store] = useTreble();
   const {updateimages, addimages} = Services();
   const [addimage, setaddimage] = useState<newimage>();
@@ -41,38 +33,19 @@ const Information = () => {
 
   const update = () => {
     // converting to base64
-    RNFS.readFile(route?.params?.otherphoto, 'base64').then( res => {
+    RNFS.readFile(route?.params?.otherphoto, 'base64').then(res => {
       debugger;
-   addimages(
-        loadid,
-        `data:image/png;base64,${res}`,
-        addimage?.length,
-        addimage?.width,
-        addimage?.height,
-        pieceType || 'pallet',
-        stackQunatity || 2,
-        1,
-        1,
-        0,
-      )
-       updateimages(loadid, 0);
-       navigation.navigate('summary');
-     
+      addimages(loadid, `data:image/png;base64,${res}`, addimage?.length, addimage?.width, addimage?.height, pieceType || 'pallet', stackQunatity || 2, 1, 1, 0);
+      updateimages(loadid, 0);
+      navigation.navigate('summary');
     });
   };
 
   return (
     <>
-      <CommonLayout
-        isnavigation={route?.params?.otherphoto}
-        navigationtext="confirm"
-        onPress={update}>
+      <CommonLayout isnavigation={route?.params?.otherphoto} navigationtext="confirm" onPress={update}>
         <View style={{alignItems: 'center', marginVertical: 16}}>
-          <Addphoto
-            image={route?.params?.otherphoto}
-            stack="information"
-            imagename="otherphoto"
-          />
+          <Addphoto image={route?.params?.otherphoto} stack="information" imagename="otherphoto" />
           <View style={{width: '100%', paddingHorizontal: 24, marginTop: 8}}>
             <View
               style={{
@@ -108,15 +81,8 @@ const Information = () => {
               />
             </View>
             <View style={{marginTop: 8}}>
-              <Dropdown
-                data={['pallet-1', 'pallet-2']}
-                label="Piece Type"
-                
-              />
-              <Dropdown
-                data={['1', '2']}
-                label="Stack Quantity"
-                ></Dropdown>
+              <Dropdown data={['pallet-1', 'pallet-2']} label="Piece Type" />
+              <Dropdown data={['1', '2']} label="Stack Quantity"></Dropdown>
             </View>
           </View>
         </View>

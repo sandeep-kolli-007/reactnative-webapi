@@ -10,7 +10,7 @@ import {useNavigation} from '@react-navigation/core';
 import TextBox from '../shared/input';
 
 const Damage = () => {
-  const route = useRoute();
+  const route:any = useRoute();
   const navigation :any= useNavigation();
   const {updatedamagedpieces} = Services();
   const [{loadid}, Store] = useTreble();
@@ -21,7 +21,7 @@ const Damage = () => {
   };
   return (
     <CommonLayout isnavigation navigationtext="Confirm" onPress={update}>
-      <View style={{margin: 16}}>
+      <View >
         <View style={{alignItems: 'center'}}>
           <Addphoto
             text="Add Damage Photo"

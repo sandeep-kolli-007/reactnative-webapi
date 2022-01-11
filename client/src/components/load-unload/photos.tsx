@@ -8,7 +8,7 @@ import TextBox from '../shared/input'
 const Photo = () => {
     return (
         <CommonLayout>
-            <View style={{marginHorizontal:16}}>
+            <View>
                 <TextBox label="Trailer Bar Code" inputgroup/>
                 <View style={{alignItems:"center",marginTop:16}}>
                     <CustomButton text='ADD PHOTO' icon={"camera"} width={140}/>

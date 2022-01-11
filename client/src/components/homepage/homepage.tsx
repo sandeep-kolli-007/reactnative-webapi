@@ -2,48 +2,49 @@ import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import CommonLayout from '../shared/commonlayout';
-
-//*Data to be mapped
+import {colors} from '../../colors';
+import {styles} from './style';
+// * Data to be mapped
 const data = [
   {
     icon: 'tag',
     title: 'Confirm',
-    stack:"shipmentscanning"
+    stack: 'shipmentscanning',
   },
   {
     icon: 'sign-in-alt',
     title: 'Arrive/Depart',
-    stack:"arrivedepart"
+    stack: 'arrivedepart',
   },
   {
     icon: 'truck-loading',
     title: 'Load/Unload',
-    stack:"loadunload"
+    stack: 'loadunload',
   },
   {
     icon: 'columns',
     title: 'Split Order',
-    stack:"splitorder"
+    stack: 'splitorder',
   },
   {
     icon: 'stopwatch-20',
     title: 'Dock Count',
-    stack:"dockcount"
+    stack: 'dockcount',
   },
   {
     icon: 'file-alt',
     title: 'Manifest',
-    stack:"manifest"
+    stack: 'manifest',
   },
   {
     icon: 'warehouse',
     title: 'Trailer ID Location',
-    stack:"shipmentscanning"
+    stack: 'shipmentscanning',
   },
   {
     icon: 'building',
     title: 'Receive into Warehouse',
-    stack:"receiveintowarehouse"
+    stack: 'receiveintowarehouse',
   },
 ];
 const Homepage = ({navigation}: any) => {
@@ -52,37 +53,13 @@ const Homepage = ({navigation}: any) => {
       <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
         {data.map(e => {
           return (
-            <View
-              key={e.icon}
-              style={{
-                width: '33.33%',
-                display: 'flex',
-                marginVertical: 16,
-                alignItems: 'center',
-              }}>
-              <TouchableOpacity
-                onPress={() => navigation.navigate(e.stack)}>
-                <View
-                  style={{
-                    backgroundColor: 'white',
-                    height: 80,
-                    width: 80,
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    borderRadius: 8,
-                  }}>
-                  <Icon name={e.icon} size={30} color="#000" solid />
+            <View key={e.icon} style={styles.iconCardColumn}>
+              <TouchableOpacity onPress={() => navigation.navigate(e.stack)}>
+                <View style={styles.iconCard}>
+                  <Icon name={e.icon} size={30} color={colors.primary} solid />
                 </View>
               </TouchableOpacity>
-              <Text
-                style={{
-                  color: 'white',
-                  fontSize: 12,
-                  textAlign: 'center',
-                  marginTop: 8,
-                }}>
-                {e.title}
-              </Text>
+              <Text style={styles.text}>{e.title}</Text>
             </View>
           );
         })}

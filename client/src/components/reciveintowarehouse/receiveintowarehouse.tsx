@@ -9,7 +9,7 @@ const ReceiveIntoWareHouse = () => {
   const Navigation: any = useNavigation();
   return (
     <CommonLayout hidefooter>
-      <View style={{marginHorizontal: 16}}>
+      <View>
         <TextBox label="Shipment ID" inputgroup onPress={() => Navigation.navigate('searchresults')} />
         <Text style={{textAlign: 'center', color: 'white', marginTop: 16}}>----- OR -----</Text>
 

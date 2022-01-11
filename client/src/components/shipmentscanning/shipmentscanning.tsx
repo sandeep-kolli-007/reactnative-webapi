@@ -56,12 +56,9 @@ const ShipmentScanning = () => {
           </RNCamera>
         </View>
       ) : (
-        <CommonLayout
-          navigation="summary"
-          isnavigation={scannedValue.length > 6 ? true : false}
-          navigationtext="Next">
+        <CommonLayout navigation="summary" isnavigation={scannedValue.length > 6 ? true : false} navigationtext="Next">
           <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-            <View style={{paddingHorizontal: 16, marginBottom: 16}}>
+            <View style={{marginBottom: 16}}>
               <TextBox
                 inputgroup
                 value={scannedValue}
@@ -70,7 +67,6 @@ const ShipmentScanning = () => {
                   setScannedValue(text);
                 }}
                 onPress={() => setScanMode(true)}
-                styles={{marginTop: 16}}
                 label=" Shipment ID / LTL Pro / Piece ID"
               />
               <View

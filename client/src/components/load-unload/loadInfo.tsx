@@ -6,7 +6,7 @@ import TextBox from '../shared/input';
 const LoadInfo = () => {
   return (
     <CommonLayout hidefooter >
-      <View style={{marginHorizontal: 16}}>
+      <View>
         <TextBox label="Trailer Bar Code" inputgroup />
         <TextBox label="Load Display ID" styles={{marginTop: 16}} />
         <Text

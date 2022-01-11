@@ -7,7 +7,7 @@ import TextBox from '../shared/input'
 const ExceptionTab = () => {
     return (
         <CommonLayout hidefooter>
-            <View style={{marginHorizontal:16}}>
+            <View>
                 <TextBox label="Trailer Barcode"/>
                 <View style={{alignItems:"center"}}>
                     <CustomButton text='SEARCH' icon={"search"} style={{marginTop:16}}/>
