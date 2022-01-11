@@ -8,18 +8,18 @@ import TextBox from '../shared/input';
 import { useNavigation } from '@react-navigation/core';
 
 const SelectPhoto = () => {
-    const navigation :any= useNavigation();
+    // const navigation :any= useNavigation();
     const [retrivedimages, setretrivedimages] = useState<Array<any>>([]);
     const {GreetModule, LoadsModule} = NativeModules;
 
-  const grpc = async () => {
-    await LoadsModule.Message('s', (res: any) => {
-      setretrivedimages(res[0].images);
-    });
-  };
-  useEffect(() => {
-    grpc();
-  }, []);
+  // const grpc = async () => {
+  //   await LoadsModule.Message('s', (res: any) => {
+  //     setretrivedimages(res[0].images);
+  //   });
+  // };
+  // useEffect(() => {
+  //   grpc();
+  // }, []);
   return (
     <CommonLayout isnavigation navigationtext="Confirm">
       <View style={{flex: 1, alignItems: 'center', marginTop: 16}}>

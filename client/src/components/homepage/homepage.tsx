@@ -8,30 +8,42 @@ const data = [
   {
     icon: 'tag',
     title: 'Confirm',
+    stack:"shipmentscanning"
   },
   {
     icon: 'sign-in-alt',
     title: 'Arrive/Depart',
+    stack:"arrivedepart"
   },
   {
     icon: 'truck-loading',
     title: 'Load/Unload',
+    stack:"loadunload"
   },
   {
     icon: 'columns',
     title: 'Split Order',
+    stack:"splitorder"
   },
   {
     icon: 'stopwatch-20',
     title: 'Dock Count',
+    stack:"dockcount"
   },
   {
     icon: 'file-alt',
     title: 'Manifest',
+    stack:"manifest"
   },
   {
     icon: 'warehouse',
     title: 'Trailer ID Location',
+    stack:"shipmentscanning"
+  },
+  {
+    icon: 'building',
+    title: 'Receive into Warehouse',
+    stack:"receiveintowarehouse"
   },
 ];
 const Homepage = ({navigation}: any) => {
@@ -49,7 +61,7 @@ const Homepage = ({navigation}: any) => {
                 alignItems: 'center',
               }}>
               <TouchableOpacity
-                onPress={() => navigation.navigate('shipmentscanning')}>
+                onPress={() => navigation.navigate(e.stack)}>
                 <View
                   style={{
                     backgroundColor: 'white',
@@ -59,7 +71,7 @@ const Homepage = ({navigation}: any) => {
                     justifyContent: 'center',
                     borderRadius: 8,
                   }}>
-                  <Icon name={e.icon} size={30} color="#000" />
+                  <Icon name={e.icon} size={30} color="#000" solid />
                 </View>
               </TouchableOpacity>
               <Text

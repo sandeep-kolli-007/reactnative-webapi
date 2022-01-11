@@ -19,7 +19,7 @@ const CommonLayout = (props: any) => {
         flex: 1,
         borderTopWidth: 1,
         borderTopColor: '#111',
-        opacity:props.opacity || 1
+        opacity: props.opacity || 1,
       }}>
       <View
         style={{
@@ -31,20 +31,33 @@ const CommonLayout = (props: any) => {
         }}>
         <ScrollView>{props.children}</ScrollView>
       </View>
-      <View>
-        <View style={{height: 3, backgroundColor: 'green'}}></View>
-        <View
-          style={{
-            marginHorizontal: 24,
-            marginTop: 8,
-            marginBottom:16,
-            flexDirection: 'row',
-            justifyContent: 'space-between',
-          }}>
-          <CustomButton stack="osd" text="O/S/D" />
-          {props.isnavigation && <CustomButton stack={props.navigation} text={props.navigationtext} onPress={props.onPress}/>}
+      {!props.hidefooter && (
+        <View>
+          <View style={{height: 3, backgroundColor: 'green'}}></View>
+          <View
+            style={{
+              marginHorizontal: 24,
+              marginTop: 8,
+              marginBottom: 16,
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+            }}>
+            {!props.isButtons && (
+              <>
+                <CustomButton stack="osd" text="O/S/D" />
+                {props.isnavigation && (
+                  <CustomButton
+                    stack={props.navigation}
+                    text={props.navigationtext}
+                    onPress={props.onPress}
+                  />
+                )}
+              </>
+            )}
+            {props.isButtons}
+          </View>
         </View>
-      </View>
+      )}
     </View>
   );
 };

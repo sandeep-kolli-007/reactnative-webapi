@@ -6,21 +6,21 @@ import InfoBar from './infobar';
 import RNPrint from 'react-native-print';
 import {useTreble} from 'treble-gsm';
 import {Services} from '../../services/services';
-import {useIsFocused} from '@react-navigation/core';
+// import {useIsFocused} from '@react-navigation/core';
 import {Common} from '../commonfunctions/common';
-import {useNetInfo} from '@react-native-community/netinfo';
+// import {useNetInfo} from '@react-native-community/netinfo';
 const Summary = () => {
   // const navigation = useNavigation();
   const [{shipment}, Store] = useTreble();
-  const [shipments, setshipments] = useState([]);
+  const [shipments, setshipments] = useState([{pieceId:"S1234561-1",pieceState:"unconfirmed"}]);
   const [modalVisible, setModalVisible] = useState(false);
 
   const {GreetModule, LoadsModule} = NativeModules;
 
   const {getpieces} = Services();
   const {sync} = Common();
-  const isFocused = useIsFocused();
-  const netInfo = useNetInfo();
+  // const isFocused = useIsFocused();
+  // const netInfo = useNetInfo();
 
   const data: any = [];
 
@@ -50,23 +50,23 @@ const Summary = () => {
   };
 
  //*grpc service invoking
- const grpc = async () => {
-  await LoadsModule.Message('s1234561', (res: any) => {
-    setshipments(res);
+//  const grpc = async () => {
+//   await LoadsModule.Message('s1234561', (res: any) => {
+//     setshipments(res);
    
     
-  });
-};
+//   });
+// };
 
 useEffect(()=>{
   console.log(JSON.stringify(shipments));
 },[shipments])
   //* side effect which render on each time page renders
-  useEffect(() => {
-    // getAllPieces();
-    grpc();
-    // sync();
-  }, [isFocused, netInfo]);
+  // useEffect(() => {
+  //   // getAllPieces();
+  //   grpc();
+  //   // sync();
+  // }, [isFocused, netInfo]);
 
   return (
     <CommonLayout   opacity={modalVisible && 0.5}>

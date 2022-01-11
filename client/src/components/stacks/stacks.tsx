@@ -26,25 +26,16 @@ import OveragePieces from '../overage/overage-pieces';
 import OverageSummary from '../overage/overage-summary';
 import SelectPhoto from '../selectphoto/selectphoto';
 import PieceSummary from '../piecesummary/piecesummary';
-
-type RootStackParamList = {
-  Home: undefined;
-  shipmentscanning: undefined;
-  summary: undefined;
-  photoselect: undefined;
-  osd:undefined;
-  information:undefined;
-  productscanning:undefined;
-  camera:undefined;
-  damage:undefined;
-  overage:undefined;
-  overagepieces:undefined;
-  overagesummary:undefined;
-  selectphoto:undefined;
-  piecesummary:undefined
-};
-const Stack = createNativeStackNavigator<RootStackParamList>();
-const options:any = {
+import ArriveDepart from '../arrive-depart/arriveDepart';
+import LoadUnload from '../load-unload/LoadUnload';
+import SplitOrder from '../splitorder/splitorder';
+import DockCount from '../dockcount/dockcount';
+import manifest from '../manifest/manifest';
+import ReceiveIntoWareHouse from '../reciveintowarehouse/receiveintowarehouse';
+import SearchBy from '../reciveintowarehouse/searchby';
+import SearchResults from '../reciveintowarehouse/searchresults';
+const Stack = createNativeStackNavigator();
+const options: any = {
   headerStyle: {
     backgroundColor: '#0F1924',
   },
@@ -60,29 +51,25 @@ const options:any = {
 const Stacks = () => {
   const [{shipment, piece}, Store] = useTreble();
   const {sync} = Common();
-  const {createtable, insertloads, insertimages, getunsyncedloads, loadscount} =
-    Services();
+  const {createtable, insertloads, insertimages, getunsyncedloads, loadscount} = Services();
   const netInfo = useNetInfo();
   const [data, setdata] = useState('default');
-  const {GreetModule, LoadsModule,GreetService} = NativeModules; 
-  
+  const {GreetModule, LoadsModule, GreetService} = NativeModules;
+
   const grpc = async () => {
     // await LoadsModule.Message('s', (res: any) => {
     //   setdata(res);
     // });
     // const res = await GreetModule.Message('Sandeep_kolli');
     // alert(res);
-    
-   
+
     try {
-   let res=await GreetService?.sayHello("World");
-      setdata(res );
+      let res = await GreetService?.sayHello('World');
+      setdata(res);
     } catch (e) {
       console.error(e);
     }
-   
   };
- 
 
   useEffect(() => {
     // grpc();
@@ -192,127 +179,34 @@ const Stacks = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{presentation: 'card'}}>
-        <Stack.Screen
-          name="Home"
-          component={Homepage}
-          options={{
-            title: 'Homepage',
-            ...options,
-          }}
-        />
-        <Stack.Screen
-          name="shipmentscanning"
-          component={ShipmentScanning}
-          options={{
-            title: 'Shipment Scanning',
-            ...options,
-          }}
-        />
-        <Stack.Screen
-          name="summary"
-          component={Summary}
-          options={{
-            title: shipment + ' Summary',
-            ...options,
-          }}
-        />
+        <Stack.Screen name="Home" component={Homepage} options={{title: 'Homepage', ...options}} />
+        <Stack.Screen name="shipmentscanning" component={ShipmentScanning} options={{title: 'Shipment Scanning', ...options}} />
+        <Stack.Screen name="summary" component={Summary} options={{title: shipment + ' Summary', ...options}} />
 
-        <Stack.Screen
-          name="osd"
-          component={OSD}
-          options={{
-            title: 'O/S/D selection',
-            ...options,
-          }}
-        />  
+        <Stack.Screen name="osd" component={OSD} options={{title: 'O/S/D selection', ...options}} />
         {/* <Stack.Screen
           name="print"
           component={RNPrintExample}
-          options={{
-            title: 'print',
-            ...options,
-          }}
+          options={{title: 'print',...options}}
         /> */}
-         <Stack.Screen
-          name="photoselect"
-          component={PhotoSelect}
-          options={{
-            title: piece + ' Photo Select',
-            ...options,
-          }}
-        />
-        <Stack.Screen
-          name="information"
-          component={Information}
-          options={{
-            title: 'Information',
-            ...options,
-          }}
-        />
-        <Stack.Screen
-          name="productscanning"
-          component={ProductScanning}
-          options={{
-            title: 'Product Scanning',
-            ...options,
-          }}
-        />
-        <Stack.Screen
-          name="camera"
-          component={Camera}
-          options={{
-            title: 'camera',
-            ...options,
-          }}
-        />
-        <Stack.Screen
-          name="damage"
-          component={Damage}
-          options={{
-            title: 'Damage Information',
-            ...options,
-          }}
-        />
-        <Stack.Screen
-          name="overage"
-          component={Overage}
-          options={{
-            title: 'Overage Info',
-            ...options,
-          }}
-        />
-        <Stack.Screen
-          name="overagepieces"
-          component={OveragePieces}
-          options={{
-            title: 'Overage Pieces',
-            ...options,
-          }}
-        />
-        <Stack.Screen
-          name="overagesummary"
-          component={OverageSummary}
-          options={{
-            title: 'Overage Summary',
-            ...options,
-          }}
-        />  
-        <Stack.Screen
-          name="selectphoto"
-          component={SelectPhoto}
-          options={{
-            title: 'Select Photo',
-            ...options,
-          }}
-        />
-        <Stack.Screen
-          name="piecesummary"
-          component={PieceSummary}
-          options={{
-            title: 'Piece Summary',
-            ...options,
-          }}
-        />
+        <Stack.Screen name="photoselect" component={PhotoSelect} options={{title: piece + ' Photo Select', ...options}} />
+        <Stack.Screen name="information" component={Information} options={{title: 'Information', ...options}} />
+        <Stack.Screen name="productscanning" component={ProductScanning} options={{title: 'Product Scanning', ...options}} />
+        <Stack.Screen name="camera" component={Camera} options={{title: 'camera', ...options}} />
+        <Stack.Screen name="damage" component={Damage} options={{title: 'Damage Information', ...options}} />
+        <Stack.Screen name="overage" component={Overage} options={{title: 'Overage Info', ...options}} />
+        <Stack.Screen name="overagepieces" component={OveragePieces} options={{title: 'Overage Pieces', ...options}} />
+        <Stack.Screen name="overagesummary" component={OverageSummary} options={{title: 'Overage Summary', ...options}} />
+        <Stack.Screen name="selectphoto" component={SelectPhoto} options={{title: 'Select Photo', ...options}} />
+        <Stack.Screen name="piecesummary" component={PieceSummary} options={{title: 'Piece Summary', ...options}} />
+        <Stack.Screen name="arrivedepart" component={ArriveDepart} options={{title: 'Arrive/Depart Trailer', ...options}} />
+        <Stack.Screen name="loadunload" component={LoadUnload} options={{title: 'Load/Unload', ...options}} />
+        <Stack.Screen name="splitorder" component={SplitOrder} options={{title: 'Split Order', ...options}} />
+        <Stack.Screen name="dockcount" component={DockCount} options={{title: 'Dock Count', ...options}} />
+        <Stack.Screen name="manifest" component={manifest} options={{title: 'Manifest', ...options}} />
+        <Stack.Screen name="receiveintowarehouse" component={ReceiveIntoWareHouse} options={{title: 'Receive Into Warehouse', ...options}} />
+        <Stack.Screen name="searchby" component={SearchBy} options={{title: 'Receive Into Warehouse', ...options}} />
+        <Stack.Screen name="searchresults" component={SearchResults} options={{title: 'S1234567', ...options}} />
       </Stack.Navigator>
     </NavigationContainer>
   );

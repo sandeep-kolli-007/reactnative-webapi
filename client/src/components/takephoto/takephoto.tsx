@@ -22,7 +22,7 @@ const TakePhoto = ( ) => {
   const navigation:any = useNavigation();
   const [{loadid}, Store] = useTreble();
   const {getimages,updateimages} = Services();
-  const [retrivedimages, setretrivedimages] = useState<Array<any>>([]);
+  const [retrivedimages, setretrivedimages] = useState<Array<any>>([{imageurl:"https://www.kindpng.com/picc/m/682-6820555_package-vector-corrugated-box-cartoon-cardboard-box-png.png"}]);
   const data: any = [];
   const {GreetModule, LoadsModule} = NativeModules;
  
@@ -54,7 +54,7 @@ const TakePhoto = ( ) => {
   };
  //* useEffect for side effects.renders when component mounts or dependency value changes.
   useEffect(() => {
-    grpc();
+    // grpc();
     // getAllImages();
     // RNFS.readDir(RNFS.ExternalDirectoryPath).then(res => {
     //   console.log('GOT RESULT', res);
