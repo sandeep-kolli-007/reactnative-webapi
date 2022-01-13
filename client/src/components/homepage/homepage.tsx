@@ -41,11 +41,11 @@ const data = [
     title: 'Trailer ID Location',
     stack: 'shipmentscanning',
   },
-  {
-    icon: 'building',
-    title: 'Receive into Warehouse',
-    stack: 'receiveintowarehouse',
-  },
+  // {
+  //   icon: 'building',
+  //   title: 'Receive into Warehouse',
+  //   stack: 'receiveintowarehouse',
+  // },
 ];
 const Homepage = ({navigation}: any) => {
   return (

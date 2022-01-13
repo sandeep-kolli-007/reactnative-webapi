@@ -6,12 +6,23 @@ import Stacks from './src/components/stacks/stacks';
 import Test from './src/components/testing/test';
 import Treble from 'treble-gsm';
 import Store from './src/components/store/store';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import Homepage from './src/components/homepage/homepage';
+import ShipmentScanning from './src/components/shipmentscanning/shipmentscanning';
+
+const Drawer = createDrawerNavigator();
 const App = () => {
   return (
     <>
       {/* <React.StrictMode> */}
       <Treble store={Store}>
         <Stacks />
+{/* <NavigationContainer>
+   <Drawer.Navigator>
+          <Drawer.Screen name="stackss" component={Stacks} />
+        </Drawer.Navigator>
+</NavigationContainer> */}
+       
         {/* <Test/> */}
       </Treble>
       {/* </React.StrictMode> */}
