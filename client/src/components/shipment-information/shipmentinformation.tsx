@@ -6,7 +6,7 @@ import TextBox from '../shared/input'
 
 const ShipmentInformation = () => {
     return (
-        <CommonLayout isButtons={<><View></View><CustomButton text="Save" stack={"summary"}/></>}>
+        <CommonLayout Rightbtn={<CustomButton text="Save" stack={"summary"} />}>
             <View>
                 <TextBox label="Trailer Number"/>
                 <TextBox label="Delivery Note"/>

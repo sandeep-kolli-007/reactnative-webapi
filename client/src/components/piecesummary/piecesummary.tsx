@@ -1,11 +1,12 @@
 import React from 'react';
 import {View, Text, TouchableHighlight, Image} from 'react-native';
 import CommonLayout from '../shared/commonlayout';
+import CustomButton from '../shared/custombutton';
 import SummaryInfoCard from './summaryinfocard';
 
 const PieceSummary = () => {
   return (
-    <CommonLayout navigationtext="Finish" isnavigation>
+    <CommonLayout   Rightbtn={<CustomButton text={'Finish'} stack={''}/>}>
       <View style={{alignItems: 'center', marginTop: 32}}>
         <TouchableHighlight
           style={{

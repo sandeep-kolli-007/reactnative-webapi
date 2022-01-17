@@ -8,6 +8,7 @@ import CommonLayout from '../shared/commonlayout';
 import Dropdown from '../shared/dropdown';
 import {useNavigation} from '@react-navigation/core';
 import TextBox from '../shared/input';
+import CustomButton from '../shared/custombutton';
 
 const Damage = () => {
   const route:any = useRoute();
@@ -20,7 +21,7 @@ const Damage = () => {
     navigation.navigate('summary');
   };
   return (
-    <CommonLayout isnavigation navigationtext="Confirm" onPress={update}>
+    <CommonLayout Rightbtn={<CustomButton text={'Confirm'} onPress={update}/>}>
       <View >
         <View style={{alignItems: 'center'}}>
           <Addphoto

@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import CommonLayout from '../shared/commonlayout';
 import {colors} from '../../colors';
 import {styles} from './style';
+import CustomButton from '../shared/custombutton';
 // * Data to be mapped
 const data = [
   {
@@ -49,7 +50,7 @@ const data = [
 ];
 const Homepage = ({navigation}: any) => {
   return (
-    <CommonLayout>
+    <CommonLayout >
       <View style={{flexDirection: 'row', flexWrap: 'wrap'}}>
         {data.map(e => {
           return (

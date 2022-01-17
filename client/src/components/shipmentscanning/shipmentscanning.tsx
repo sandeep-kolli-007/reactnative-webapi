@@ -7,6 +7,7 @@ import {RNCamera} from 'react-native-camera';
 import BarcodeMask from 'react-native-barcode-mask';
 import {useTreble} from 'treble-gsm';
 import {useIsFocused} from '@react-navigation/core';
+import CustomButton from '../shared/custombutton';
 
 const ShipmentScanning = () => {
   const [{shipment}, Store] = useTreble();
@@ -56,7 +57,7 @@ const ShipmentScanning = () => {
           </RNCamera>
         </View>
       ) : (
-        <CommonLayout navigation="shipmentinformation" isnavigation={scannedValue.length >= 0 ? true : false} navigationtext="Next">
+        <CommonLayout  Lefttbtn={<CustomButton text={'O/S/D'} stack={"osd"}/>} Rightbtn={<CustomButton text={'Next'} stack={"shipmentinformation"}/>} >
           <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <View style={{marginBottom: 16}}>
               <TextBox

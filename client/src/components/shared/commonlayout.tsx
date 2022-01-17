@@ -31,16 +31,19 @@ const CommonLayout = (props: any) => {
               marginHorizontal: 24,
               marginTop: 8,
               marginBottom: 16,
+              height:40,
               flexDirection: 'row',
               justifyContent: 'space-between',
             }}>
-            {!props.isButtons && (
+            {/* {!props.isButtons && (
               <>
                 <CustomButton stack="osd" text="O/S/D" />
                 {props.isnavigation && <CustomButton stack={props.navigation} text={props.navigationtext} onPress={props.onPress} />}
               </>
             )}
-            {props.isButtons}
+            {props.isButtons} */}
+            <View>{props.Lefttbtn}</View>
+            <View>{props.Rightbtn}</View>
           </View>
         </View>
       )}

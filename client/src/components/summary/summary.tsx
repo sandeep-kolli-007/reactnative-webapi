@@ -66,7 +66,7 @@ const Summary = () => {
   // }, [isFocused, netInfo]);
 
   return (
-    <CommonLayout opacity={modalVisible && 0.5} navigation={"documentationphotos"} navigationtext="save" isnavigation>
+    <CommonLayout opacity={modalVisible && 0.5} Rightbtn={<CustomButton text={'Finish'} stack={"documentationphotos"}/>}  >
       <View style={styles.buttons}>
         <CustomButton stack="selectphoto" text="No Labels" width={140} />
         <CustomButton

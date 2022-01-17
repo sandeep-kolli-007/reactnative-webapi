@@ -54,7 +54,7 @@ const TakePhoto = () => {
   }, []);
 
   return (
-    <CommonLayout isnavigation={retrivedimages.filter(f => f.Selected === 1).length > 0 ? true : false} navigationtext="confirm" onPress={update}>
+    <CommonLayout Rightbtn={(retrivedimages.filter(f => f.Selected === 1).length > 0) &&<CustomButton text={'Confirm'} onPress={update}/>}>
       <View style={{alignItems: 'center', marginVertical: 32}}>
         {retrivedimages.map((res: any, index: number) => {
           return (

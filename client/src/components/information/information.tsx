@@ -43,7 +43,7 @@ const Information = () => {
 
   return (
     <>
-      <CommonLayout isnavigation={route?.params?.otherphoto} navigationtext="confirm" onPress={update}>
+      <CommonLayout   Rightbtn={route?.params?.otherphoto && <CustomButton text={'Confirm'} onPress={update}/>}>
         <View style={{alignItems: 'center', marginVertical: 16}}>
           <Addphoto image={route?.params?.otherphoto} stack="information" imagename="otherphoto" />
           <View style={{width: '100%', paddingHorizontal: 24, marginTop: 8}}>

@@ -25,7 +25,7 @@ const SelectPhoto = () => {
   //   grpc();
   // }, []);
   return (
-    <CommonLayout isnavigation navigationtext="Confirm">
+    <CommonLayout   Rightbtn={<CustomButton text={'Confirm'} />}>
       <View style={{flex: 1, alignItems: 'center', marginTop: 16}}>
         <CustomButton text={'Shippers L&C'} style={{marginBottom: 16}} />
         {retrivedimages.map((res: any, index: number) => {

@@ -13,10 +13,8 @@ interface productScanning {
 const ProductScanning = () => {
   const [productdetails, setproductdetails] = useState<productScanning>();
   return (
-    <CommonLayout
-      isnavigation
-      navigation="piececardsummary"
-      navigationtext="Process">
+    <CommonLayout   Rightbtn={<CustomButton text={'Process'} stack={"summary"}/>}
+      >
       <View>
         <TextBox
           label="Product Number"
