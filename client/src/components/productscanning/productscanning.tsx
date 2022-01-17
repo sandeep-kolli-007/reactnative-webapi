@@ -15,7 +15,7 @@ const ProductScanning = () => {
   return (
     <CommonLayout
       isnavigation
-      navigation="photoselect"
+      navigation="piececardsummary"
       navigationtext="Process">
       <View>
         <TextBox
@@ -49,8 +49,7 @@ const ProductScanning = () => {
         <View style={{alignItems: 'center', marginTop: 16}}>
           <CustomButton
             text="Next Product"
-            width={200}
-            fontSize={18}></CustomButton>
+            width={200}></CustomButton>
         </View>
       </View>
     </CommonLayout>

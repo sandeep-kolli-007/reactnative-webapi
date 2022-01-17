@@ -12,7 +12,7 @@ import {colors} from '../../colors';
 
 const Summary = () => {
   const [{shipment}, Store] = useTreble();
-  const [shipments, setshipments] = useState([{pieceId: 'S1234561-1', pieceState: 'unconfirmed'}]);
+  const [shipments, setshipments] = useState([{pieceId: 'S1234561-1', pieceState: 'unconfirmed',type:"PRO"}]);
   const [modalVisible, setModalVisible] = useState(false);
 
   const {GreetModule, LoadsModule} = NativeModules;
@@ -66,7 +66,7 @@ const Summary = () => {
   // }, [isFocused, netInfo]);
 
   return (
-    <CommonLayout opacity={modalVisible && 0.5}>
+    <CommonLayout opacity={modalVisible && 0.5} navigation={"documentationphotos"} navigationtext="save" isnavigation>
       <View style={styles.buttons}>
         <CustomButton stack="selectphoto" text="No Labels" width={140} />
         <CustomButton

@@ -16,7 +16,7 @@ const TextBox = (props: any) => {
     if (props.inputgroup) setisinputgroup(true);
   }, []);
   return (
-    <View style={[{position: 'relative'}, props.styles]}>
+    <View style={[{position: 'relative',width:"100%"}, props.styles]}>
       <Text
         style={{
           color: 'white',
@@ -43,7 +43,7 @@ const TextBox = (props: any) => {
               flex: 1,
               padding: 16,
               height:props.height || 65,
-              textAlign:props.align || "left"
+              textAlign:props.align || "left",
             },
             isinputgroup && {
               borderBottomRightRadius: 0,

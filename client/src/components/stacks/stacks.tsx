@@ -34,6 +34,9 @@ import manifest from '../manifest/manifest';
 import ReceiveIntoWareHouse from '../reciveintowarehouse/receiveintowarehouse';
 import SearchBy from '../reciveintowarehouse/searchby';
 import SearchResults from '../reciveintowarehouse/searchresults';
+import ShipmentInformation from '../shipment-information/shipmentinformation';
+import PieceCardSummary from '../piececardsummary/piececardsummary';
+import DocumentationPhotos from '../documentationphotos/documentationphotos';
 const Stack = createNativeStackNavigator();
 const options: any = {
   headerStyle: {
@@ -207,6 +210,9 @@ const Stacks = () => {
         <Stack.Screen name="receiveintowarehouse" component={ReceiveIntoWareHouse} options={{title: 'Receive Into Warehouse', ...options}} />
         <Stack.Screen name="searchby" component={SearchBy} options={{title: 'Receive Into Warehouse', ...options}} />
         <Stack.Screen name="searchresults" component={SearchResults} options={{title: 'S1234567', ...options}} />
+        <Stack.Screen name="shipmentinformation" component={ShipmentInformation} options={{title: 'Shipment Information', ...options}} />
+        <Stack.Screen name="piececardsummary" component={PieceCardSummary} options={{title: 'Piece 1 Summary ', ...options}} />
+        <Stack.Screen name="documentationphotos" component={DocumentationPhotos} options={{title: 'Documentation Photos ', ...options}} />
       </Stack.Navigator>
     </NavigationContainer>
   );

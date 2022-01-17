@@ -56,7 +56,7 @@ const ShipmentScanning = () => {
           </RNCamera>
         </View>
       ) : (
-        <CommonLayout navigation="summary" isnavigation={scannedValue.length > 6 ? true : false} navigationtext="Next">
+        <CommonLayout navigation="shipmentinformation" isnavigation={scannedValue.length >= 0 ? true : false} navigationtext="Next">
           <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
             <View style={{marginBottom: 16}}>
               <TextBox
