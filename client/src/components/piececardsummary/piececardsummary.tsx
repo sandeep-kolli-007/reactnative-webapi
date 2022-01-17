@@ -2,6 +2,7 @@ import React from 'react';
 import {View, Text, TouchableHighlight} from 'react-native';
 import CommonLayout from '../shared/commonlayout';
 import { colors } from '../../colors';
+import CustomButton from '../shared/custombutton';
 const PieceCardSummary = () => {
   const data = [
     {state:"confirmed",pieceId: 39203, qty: 25000, totalqty: 25000},
@@ -9,7 +10,7 @@ const PieceCardSummary = () => {
   ];
  
   return (
-    <CommonLayout>
+    <CommonLayout isButtons={<><View></View><View><CustomButton text={'Next Piece'} stack={"summary"}/></View></>}>
       <View style={{marginTop: 48}}>
         {data.map((res, index) => {
           return (
