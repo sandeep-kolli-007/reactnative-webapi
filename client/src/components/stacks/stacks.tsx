@@ -37,6 +37,7 @@ import SearchResults from '../reciveintowarehouse/searchresults';
 import ShipmentInformation from '../shipment-information/shipmentinformation';
 import PieceCardSummary from '../piececardsummary/piececardsummary';
 import DocumentationPhotos from '../documentationphotos/documentationphotos';
+import Login from '../login/login';
 const Stack = createNativeStackNavigator();
 const options: any = {
   headerStyle: {
@@ -182,6 +183,7 @@ const Stacks = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{presentation: 'card'}}>
+        <Stack.Screen name="Login" component={Login} options={{title: 'Login', ...options}} />
         <Stack.Screen name="Home" component={Homepage} options={{title: 'Homepage', ...options}} />
         <Stack.Screen name="shipmentscanning" component={ShipmentScanning} options={{title: 'Shipment Scanning', ...options}} />
         <Stack.Screen name="summary" component={Summary} options={{title: shipment + ' Summary', ...options}} />

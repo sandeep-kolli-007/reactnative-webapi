@@ -7,7 +7,7 @@ interface Iprops {
   color?: string;
   textColor?: string;
   text: string;
-  width?: number;
+  width?: number|string;
   fontSize?: number;
   onPress?: any;
   disabled?: boolean;

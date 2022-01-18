@@ -31,7 +31,7 @@ const TextBox = (props: any) => {
         {props.label}
       </Text>
       <View style={{flex: 1, flexDirection: 'row'}}>
-        <TextInput onChange={props.onChange} value={props.value} keyboardType={props.keyboardType}
+        <TextInput onChangeText={props.onChangeText} onChange={props.onChange} value={props.value} keyboardType={props.keyboardType}
           style={[
             {
               marginTop: 16,
