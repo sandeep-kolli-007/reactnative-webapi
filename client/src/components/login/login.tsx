@@ -1,3 +1,4 @@
+import { useNavigation } from '@react-navigation/native'
 import React, { useState } from 'react'
 import { View, Text, Image, Alert } from 'react-native'
 import CommonLayout from '../shared/commonlayout'
@@ -5,6 +6,7 @@ import CustomButton from '../shared/custombutton'
 import TextBox from '../shared/input'
 
 const Login = () => {
+  const navigation:any = useNavigation();
     const [userDetails, setUserDetails] = useState({})
 const baseurl="https://stage.optimiz.platform.dptsprotrans.com"
 const user="Veeru"
@@ -31,7 +33,7 @@ const password ="874245ca727bbd54161fd425b0a76023"
         .then((response:any)  =>response.text())
         .then(result => result.replace('(','').replace(')',''))
         .then(res =>JSON.parse(res))
-        .then(data => console.log(data))
+        .then(data => {(data.isAuthorizedUser === "True")?navigation.navigate("Home"): Alert.alert("loggedin successfully")})
         .catch(e=>console.error("error"+e))
     }
 }
