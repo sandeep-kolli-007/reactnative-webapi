@@ -14,7 +14,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import RNFS from 'react-native-fs';
 import CustomButton from '../custombutton';
 import {useTreble} from 'treble-gsm';
-import {Services} from '../../../services/services';
+// import {Services} from '../../../services/services';
 import {useNavigation} from '@react-navigation/core';
 import TextBox from '../input';
 import Dropdown from '../dropdown';
@@ -30,7 +30,7 @@ interface newimage {
 }
 
 const Addphoto = (props: any) => {
-  const navigation = useNavigation();
+  const navigation:any = useNavigation();
   return (
     <>
       <TouchableHighlight

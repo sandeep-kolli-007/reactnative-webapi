@@ -14,7 +14,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import RNFS from 'react-native-fs';
 import CustomButton from '../custombutton';
 import {useTreble} from 'treble-gsm';
-import {Services} from '../../../services/services';
+// import {Services} from '../../../services/services';
 import {useNavigation} from '@react-navigation/core';
 import TextBox from '../input';
 import Dropdown from '../dropdown';
@@ -31,10 +31,10 @@ interface newimage {
 }
 
 const Camera = () => {
-  const navigation = useNavigation();
+  const navigation:any = useNavigation();
   const route = useRoute();
   const [{loadid}, Store] = useTreble();
-  const {getimages, updateimages, addimages} = Services();
+  // const {getimages, updateimages, addimages} = Services();
   const camera = useRef<any>(null);
   const [camerastatus, setcamerastatus] = useState(false);
   const [imageconfirm, setimageconfirm] = useState(false);
@@ -67,7 +67,7 @@ const Camera = () => {
         setimageconfirm(true);
       })
       .catch((e: any) => {
-        alert(e);
+        Alert.alert(e);
       });
 
     // console.log(data.uri);
@@ -85,45 +85,45 @@ const Camera = () => {
   };
 
   //*Get all Images for selected Pieces
-  const getAllImages = () => {
-    getimages(loadid)
-      .then((res: any) => {
-        if (res.rows.length > 0) {
-          for (var i = 0; i < res.rows.length; i++) {
-            data.push(res.rows.item(i));
-            console.log(res.rows.item(i));
-          }
-          setretrivedimages(data);
-        }
-      })
-      .catch(err => console.log(err));
-  };
+  // const getAllImages = () => {
+  //   getimages(loadid)
+  //     .then((res: any) => {
+  //       if (res.rows.length > 0) {
+  //         for (var i = 0; i < res.rows.length; i++) {
+  //           data.push(res.rows.item(i));
+  //           console.log(res.rows.item(i));
+  //         }
+  //         setretrivedimages(data);
+  //       }
+  //     })
+  //     .catch(err => console.log(err));
+  // };
   const update = () => {
     // var selectedid: any = retrivedimages.filter(f => f.Selected === 1);
     // updateimages(selectedid[0].LoadId, selectedid[0].id);
     RNFS.readFile(cacheimage, 'base64').then(res => {
       // setaddimage({...addimage, imageUrl: `data:image/png;base64,${res}`});
       console.log(res);
-      addimages(
-        0,
-        loadid,
-        `data:image/png;base64,${res}`,
-        addimage?.length,
-        addimage?.width,
-        addimage?.height,
-        'pallet',
-        2,
-        1,
-        0,
-      );
-      updateimages(loadid, 0);
+      // addimages(
+      //   0,
+      //   loadid,
+      //   `data:image/png;base64,${res}`,
+      //   addimage?.length,
+      //   addimage?.width,
+      //   addimage?.height,
+      //   'pallet',
+      //   2,
+      //   1,
+      //   0,
+      // );
+      // updateimages(loadid, 0);
       //   navigation.navigate('summary');
     });
     // addimages(3, 'gh', 10, 20, 30, 'pallet', 2, 0, 0);
   };
   //* useEffect for side effects.renders when component mounts or dependency value changes.
   useEffect(() => {
-    getAllImages();
+    // getAllImages();
     RNFS.readDir(RNFS.ExternalDirectoryPath).then(res => {
       console.log('GOT RESULT', res);
       // setimages(res);
